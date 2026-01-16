@@ -1,8 +1,8 @@
 
-# sqlmap_portswigger
-writeup pl/ang mix
+# sqlmap_portswigger <br>
+writeup pl/ang mix <br>
 
-Flags:
+Flags:<br>
 --fingerprint (for dmbs detection) <br>
 –dbs (bazy danych, lepiej tego używać niż schema) <br>
 -D public → wybór bazy <br>
